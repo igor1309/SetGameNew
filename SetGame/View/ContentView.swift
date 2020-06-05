@@ -12,18 +12,18 @@ struct ContentView: View {
     @ObservedObject var dealer = Dealer()
     
     @State private var draw: Int = 0
+    @State private var showAlert = false
     
     var body: some View {
         VStack {
             ZStack {
                 Text("\(draw) (\(dealer.game.cards().count))")
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color(UIColor.tertiaryLabel))
                     .font(.footnote)
                 
                 HStack {
                     Button("New game") {
-                        self.dealer.game.reset()
-                        self.draw = 12
+                        self.resetGame()
                     }
                     
                     Spacer()
@@ -43,6 +43,23 @@ struct ContentView: View {
                 self.draw = 12
             }
         }
+        .onReceive(dealer.$game) { game in
+            self.showAlert = game.match != nil
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(dealer.game.match ?? false ? "Yay!" : "Oops…"),
+                message: Text(dealer.game.result),
+                dismissButton: .cancel(Text("OK")) {
+                    self.resetGame()
+                }
+            )
+        }
+    }
+    
+    private func resetGame() {
+        self.dealer.game.reset()
+        self.draw = 12
     }
     
     private func cardView(_ card: Card) -> some View {
@@ -65,9 +82,9 @@ struct ContentView: View {
         
         func background() -> some View {
             
-//            let color = card.isSelected
-//                ? Color(UIColor.secondarySystemBackground)
-//                : Color(UIColor.tertiarySystemFill)
+            //            let color = card.isSelected
+            //                ? Color(UIColor.secondarySystemBackground)
+            //                : Color(UIColor.tertiarySystemFill)
             
             let color: Color = card.isMatch == nil
                 ? card.isSelected
@@ -101,7 +118,7 @@ struct ContentView: View {
         .cardify(
             cornerRadius: cornerRadius,
             background: background(),
-//            blurRadius: card.isSelected ? 20 : 0,
+            //            blurRadius: card.isSelected ? 20 : 0,
             transition: transition,
             animation: .easeInOut(duration: 1)
         )
