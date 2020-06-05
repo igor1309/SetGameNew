@@ -11,13 +11,12 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var dealer = Dealer()
     
-    @State private var draw: Int = 0
     @State private var showAlert = false
     
     var body: some View {
         VStack {
             ZStack {
-                Text("\(draw) (\(dealer.game.cards().count))")
+                Text("\(dealer.draw) (\(dealer.game.cards().count))")
                     .foregroundColor(Color(UIColor.tertiaryLabel))
                     .font(.footnote)
                 
@@ -29,18 +28,18 @@ struct ContentView: View {
                     Spacer()
                     
                     Button("More") {
-                        self.draw += 4
+                        self.dealer.moreCards()
                     }
                 }
                 .padding(.horizontal)
             }
             
-            Grid(Array(dealer.game.cards().prefix(draw))) { card in
+            Grid(dealer.cards()) { card in
                 self.cardView(card)
             }
             .padding(.horizontal, 6)
             .onAppear {
-                self.draw = 12
+                self.dealer.draw = 12
             }
         }
         .onReceive(dealer.$game) { game in
@@ -58,8 +57,7 @@ struct ContentView: View {
     }
     
     private func resetGame() {
-        self.dealer.game.reset()
-        self.draw = 12
+        self.dealer.reset()
     }
     
     private func cardView(_ card: Card) -> some View {
@@ -81,10 +79,6 @@ struct ContentView: View {
         }
         
         func background() -> some View {
-            
-            //            let color = card.isSelected
-            //                ? Color(UIColor.secondarySystemBackground)
-            //                : Color(UIColor.tertiarySystemFill)
             
             let color: Color = card.isMatch == nil
                 ? card.isSelected
@@ -118,7 +112,6 @@ struct ContentView: View {
         .cardify(
             cornerRadius: cornerRadius,
             background: background(),
-            //            blurRadius: card.isSelected ? 20 : 0,
             transition: transition,
             animation: .easeInOut(duration: 1)
         )

@@ -9,7 +9,13 @@
 import SwiftUI
 
 final class Dealer: ObservableObject {
-    @Published var game: Game = Game()
+    @Published private(set) var game: Game = Game()
+    
+    @Published var draw: Int = 0
+    
+    func cards() -> [Card] {
+        Array(game.cards().prefix(draw))
+    }
     
     func selectCard(_ card: Card) {
         game.selectCard(card)
@@ -17,5 +23,10 @@ final class Dealer: ObservableObject {
     
     func reset() {
         game.reset()
+        draw = 12
+    }
+    
+    func moreCards() {
+        draw += 4
     }
 }
