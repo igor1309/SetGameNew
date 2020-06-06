@@ -18,7 +18,7 @@ struct Game {
     private init(deck: Set<Card>) {
         self.deck = Array(deck)//deck
     }
-
+    
     init() {
         self.init(deck: Game.createDeck())
     }
@@ -41,6 +41,7 @@ struct Game {
     
     private(set) var match: Bool?
     private(set) var result: String = ""
+    private(set) var score: Int = 0
     
     private var selectedCards: [Card] { deck.filter { $0.isSelected } }
     
@@ -53,19 +54,46 @@ struct Game {
     //  MARK: - Intent(s)
     
     mutating func selectCard(_ card: Card) {
+        
+        markSelected(card)
+
+        guard selectedCards.count == 3 else { return }
+
+        //  three cards selected
+        print("3 cards")
+        (match, result) = matchResult()
+        print(match)
+        print(result)
+        
+        if match != nil {
+            if match! {
+                for card in selectedCards { markCard(card, match: match!) }
+                deleteSelectedCards()
+                score += 1
+            } else {
+                print("no match, select last")
+                deselectCards()
+                markSelected(card)
+            }
+            (match, result) = (nil, "")
+        }
+    }
+    
+    mutating func deselectCards() {
+        for card in selectedCards {
+            markSelected(card)
+        }
+    }
+    
+    mutating func markSelected(_ card: Card) {
         guard let index = deck.firstIndex(of: card) else { return }
-        
-        if selectedCards.count < 3 {
-            deck[index].isSelected.toggle()
+        deck[index].isSelected.toggle()
+    }
+    
+    mutating func deleteSelectedCards() {
+        for card in selectedCards {
+            deck.removeAll(where: { $0.id == card.id })
         }
-            
-        if selectedCards.count == 3 {
-            (match, result) = matchResult()
-            print(result)
-            for card in selectedCards { markCard(card, match: match!) }
-        }
-        
-        
     }
     
     mutating func markCard(_ card: Card, match: Bool) {
@@ -74,15 +102,15 @@ struct Game {
         deck[index].isMatch = match
     }
     
-    func matchResult() -> (Bool, String) {
-        guard selectedCards.count == 3 else { return (false, "") }
+    func matchResult() -> (Bool?, String) {
+        guard selectedCards.count == 3 else { return (nil, "") }
         
         //  Сет состоит из трёх карт, которые удовлетворяют всем условиям:
         //  все карты имеют то же количество символов или же 3 различных значения;
         //  все карты имеют тот же символ или же 3 различных символа;
         //  все карты имеют ту же текстуру или же 3 различных варианта текстуры;
         //  все карты имеют тот же цвет или же 3 различных цвета.
-
+        
         let condition1 = selectedCards.map { $0.numberOfShapes }.allSameOrDifferent()
         let condition2 = selectedCards.map { $0.shape }.allSameOrDifferent()
         let condition3 = selectedCards.map { $0.color }.allSameOrDifferent()
@@ -96,9 +124,9 @@ struct Game {
         let result4 = condition4 ? "" : "Shading don't match."
         
         let result = [result1, result2, result3, result4]
-                        .filter { !$0.isEmpty }
+            .filter { !$0.isEmpty }
             .joined(separator: "\n")
-                        
+        
         return (match, result.isEmpty ? "It's a match!!" : result)
     }
     
@@ -106,5 +134,6 @@ struct Game {
         deck = Array(Game.createDeck())
         match = nil
         result = ""
+        score = 0
     }
 }
