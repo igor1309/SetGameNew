@@ -27,6 +27,6 @@ final class Dealer: ObservableObject {
     }
     
     func moreCards() {
-        draw += 4
+        draw += 3
     }
 }

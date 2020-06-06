@@ -42,15 +42,18 @@ struct ContentView: View {
                 self.dealer.draw = 12
             }
         }
-        .onReceive(dealer.$game) { game in
-            self.showAlert = game.match != nil
+        .onReceive(
+            dealer.$game
+                .map { $0.match }
+        ) {
+            self.showAlert = $0 != nil
         }
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text(dealer.game.match ?? false ? "Yay!" : "Oops…"),
                 message: Text(dealer.game.result),
                 dismissButton: .cancel(Text("OK")) {
-                    self.resetGame()
+                    //  self.resetGame()
                 }
             )
         }
@@ -102,7 +105,9 @@ struct ContentView: View {
             )
         }
         
-        let transition = AnyTransition.move(edge: Edge.allCases.randomElement() ?? .top)
+        let transition = AnyTransition
+            .move(edge: Edge.allCases.randomElement() ?? .top)
+        //            .animation(.easeIn(duration: 5))
         
         return VStack {
             ForEach(0..<numberOfShapes) { _ in
@@ -113,7 +118,7 @@ struct ContentView: View {
             cornerRadius: cornerRadius,
             background: background(),
             transition: transition,
-            animation: .easeInOut(duration: 1)
+            animation: .easeInOut(duration: 0.6)
         )
             .onTapGesture {
                 withAnimation(.easeInOut) {
