@@ -16,10 +16,6 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ZStack {
-                Text("\(dealer.draw) (\(dealer.game.cards().count))")
-                    .foregroundColor(Color(UIColor.tertiaryLabel))
-                    .font(.footnote)
-                
                 HStack {
                     Button("New game") {
                         self.resetGame()
@@ -32,6 +28,9 @@ struct ContentView: View {
                     }
                 }
                 .padding(.horizontal)
+                
+                Text("Score: \(dealer.game.score)")
+                    .font(.headline)
             }
             
             Grid(dealer.cards()) { card in
@@ -39,13 +38,14 @@ struct ContentView: View {
             }
             .padding(.horizontal, 6)
             .onAppear {
-                self.dealer.draw = 12
+                self.dealer.start()
             }
         }
         .onReceive(
             dealer.$game
                 .map { $0.match }
         ) {
+            //            print("onReceive: \($0)")
             self.showAlert = $0 != nil
         }
         .alert(isPresented: $showAlert) {

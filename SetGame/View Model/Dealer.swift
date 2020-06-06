@@ -11,22 +11,27 @@ import SwiftUI
 final class Dealer: ObservableObject {
     @Published private(set) var game: Game = Game()
     
-    @Published var draw: Int = 0
+    //  MARK: - Model access
     
     func cards() -> [Card] {
-        Array(game.cards().prefix(draw))
+        game.cards()
+    }
+    
+    //  MARK: - Intent(s)
+    
+    func start() {
+        game.start()
     }
     
     func selectCard(_ card: Card) {
         game.selectCard(card)
     }
     
-    func reset() {
-        game.reset()
-        draw = 12
+    func moreCards() {
+        game.moreCards()
     }
     
-    func moreCards() {
-        draw += 3
+    func reset() {
+        game.reset()
     }
 }

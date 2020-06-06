@@ -23,6 +23,16 @@ struct Game {
         self.init(deck: Game.createDeck())
     }
     
+    private(set) var draw = 0
+    
+    mutating func start() {
+        draw = 12
+    }
+    
+    mutating func moreCards() {
+        draw += 3
+    }
+    
     static func createDeck() -> Set<Card> {
         let cards = Card.NumberOfShapes.allCases.flatMap { numberOfShapes in
             Card.CardShape.allCases.flatMap { shape in
@@ -48,7 +58,7 @@ struct Game {
     //  MARK: - Model access
     
     func cards() -> [Card] {//SSet<Card> {
-        deck
+        Array(deck.prefix(draw))
     }
     
     //  MARK: - Intent(s)
@@ -132,6 +142,7 @@ struct Game {
     
     mutating func reset() {
         deck = Array(Game.createDeck())
+        draw = 12
         match = nil
         result = ""
         score = 0
