@@ -53,6 +53,34 @@ struct Game {
         Array(deck.prefix(draw))
     }
     
+    //  MARK: - Hint
+    
+    mutating func hint() {
+     
+        func markHinted(cards: Card...) {
+            for card in cards {
+                guard let index = deck.firstIndex(of: card) else { continue }
+                deck[index].isHinted = true
+            }
+        }
+        
+        let table = cards()
+        
+        search: for i in 0..<table.count - 1 {
+            for j in i+1..<table.count - 1 {
+                for k in j+1..<table.count - 1 {
+                    let potentialSet = [table[i], table[j], table[k]]
+                    let (match, _) = matchResult(cards: potentialSet)
+                    if let match = match, match {
+                        print("\(match) - \(i):\(j):\(k)")
+                        markHinted(cards: table[i], table[j], table[k])
+                        break search
+                    }
+                }
+            }
+        }
+    }
+    
     //  MARK: - Intent(s)
     
     mutating func start() {
@@ -86,7 +114,7 @@ struct Game {
         guard selectedCards.count == 3 else { return }
         
         //  three cards selected
-        (match, result) = matchResult()
+        (match, result) = matchResult(cards: selectedCards)
         if match! {
             score += 1
         }
@@ -118,8 +146,8 @@ struct Game {
         deck[index].isMatch = match
     }
     
-    func matchResult() -> (Bool?, String) {
-        guard selectedCards.count == 3 else { return (nil, "") }
+    func matchResult(cards: [Card]) -> (Bool?, String) {
+        guard cards.count == 3 else { return (nil, "") }
         
         //  Сет состоит из трёх карт, которые удовлетворяют всем условиям:
         //  все карты имеют то же количество символов или же 3 различных значения;
@@ -127,10 +155,10 @@ struct Game {
         //  все карты имеют ту же текстуру или же 3 различных варианта текстуры;
         //  все карты имеют тот же цвет или же 3 различных цвета.
         
-        let condition1 = selectedCards.map { $0.numberOfShapes }.allSameOrDifferent()
-        let condition2 = selectedCards.map { $0.shape }.allSameOrDifferent()
-        let condition3 = selectedCards.map { $0.color }.allSameOrDifferent()
-        let condition4 = selectedCards.map { $0.shading }.allSameOrDifferent()
+        let condition1 = cards.map { $0.numberOfShapes }.allSameOrDifferent()
+        let condition2 = cards.map { $0.shape }.allSameOrDifferent()
+        let condition3 = cards.map { $0.color }.allSameOrDifferent()
+        let condition4 = cards.map { $0.shading }.allSameOrDifferent()
         
         let match = condition1 && condition2 && condition3 && condition4
         

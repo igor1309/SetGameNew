@@ -38,4 +38,8 @@ final class Dealer: ObservableObject {
     func resetGame() {
         game.resetGame()
     }
+    
+    func hint() {
+        game.hint()
+    }
 }

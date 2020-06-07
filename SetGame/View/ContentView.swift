@@ -17,35 +17,6 @@ struct ContentView: View {
     @State private var showAlert = false
     @State private var showSheet = false
     
-//    private func haptic(
-//        feedback: UINotificationFeedbackGenerator.FeedbackType?,
-//        style: UIImpactFeedbackGenerator.FeedbackStyle?
-//    ) {
-//        if let feedback = feedback {
-//            let generator = UINotificationFeedbackGenerator()
-//            generator.notificationOccurred(feedback)
-//        }
-//
-//        if let style = style {
-//            let generator2 = UIImpactFeedbackGenerator(style: style)
-//            generator2.impactOccurred()
-//        }
-//    }
-    
-    private func haptic(
-        feedback: UINotificationFeedbackGenerator.FeedbackType
-    ) {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(feedback)
-    }
-    
-    private func haptic(
-        style: UIImpactFeedbackGenerator.FeedbackStyle
-    ) {
-        let generator = UIImpactFeedbackGenerator(style: style)
-        generator.impactOccurred()
-    }
-    
     var body: some View {
         VStack {
             ZStack {
@@ -70,6 +41,9 @@ struct ContentView: View {
                 Text("Score: \(dealer.game.score)")
                     .foregroundColor(Color.orange)
                     .font(.headline)
+                    .onTapGesture {
+                        self.dealer.hint()
+                }
             }
             
             Grid(dealer.cards()) { card in
@@ -152,6 +126,15 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: cornerRadius)
                         .stroke(strokeColor, lineWidth: lineWidth)
             )
+                .border(card.isHinted
+                    ? Color(UIColor.systemTeal)//.opacity(0.75)
+                    : .clear)
+                .padding(card.isHinted ? 3 : 0)
+//                .shadow(
+//                    color: card.isHinted
+//                        ? Color(UIColor.systemTeal).opacity(0.75)
+//                        : .clear, radius: 3, x: 0, y: 0
+//            )
         }
         
         let transition = AnyTransition
@@ -191,6 +174,20 @@ struct ContentView: View {
         } catch {
             print("There was an error creating the engine: \(error.localizedDescription)")
         }
+    }
+    
+    private func haptic(
+        feedback: UINotificationFeedbackGenerator.FeedbackType
+    ) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(feedback)
+    }
+    
+    private func haptic(
+        style: UIImpactFeedbackGenerator.FeedbackStyle
+    ) {
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.impactOccurred()
     }
 }
 
