@@ -30,6 +30,7 @@ struct ContentView: View {
                 .padding(.horizontal)
                 
                 Text("Score: \(dealer.game.score)")
+                    .foregroundColor(Color.orange)
                     .font(.headline)
             }
             
@@ -41,11 +42,13 @@ struct ContentView: View {
                 self.dealer.start()
             }
         }
+        .background(Color.background.edgesIgnoringSafeArea(.all))
         .onReceive(
             dealer.$game
                 .map { $0.match }
+                .filter { $0 != nil }
         ) {
-            //            print("onReceive: \($0)")
+            print("onReceive: \($0)")
             self.showAlert = $0 != nil
         }
         .alert(isPresented: $showAlert) {
@@ -85,8 +88,8 @@ struct ContentView: View {
             
             let color: Color = card.isMatch == nil
                 ? card.isSelected
-                    ? Color(UIColor.secondarySystemBackground)
-                    : Color(UIColor.tertiarySystemFill)
+                    ? Color.selectedCardBackground
+                    : Color.cardBackground
                 : card.isMatch! ? Color.green.opacity(0.2) : Color.red.opacity(0.2)
             
             let strokeColor: Color =

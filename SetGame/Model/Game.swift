@@ -79,6 +79,7 @@ struct Game {
             if match! {
                 for card in selectedCards { markCard(card, match: match!) }
                 deleteSelectedCards()
+                draw = 12
                 score += 1
             } else {
                 print("no match, select last")

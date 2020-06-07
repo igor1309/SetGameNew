@@ -25,6 +25,7 @@
 		2A673D95248AEAE3000D293B /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A673D94248AEAE3000D293B /* CardViewModifier.swift */; };
 		2ACD1411248B89BC001DC143 /* Array+allSameOrDifferent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1410248B89BC001DC143 /* Array+allSameOrDifferent.swift */; };
 		2ACD1413248B89D9001DC143 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1412248B89D9001DC143 /* Card.swift */; };
+		2ACD1417248CEA0A001DC143 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1416248CEA0A001DC143 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		2A673D94248AEAE3000D293B /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		2ACD1410248B89BC001DC143 /* Array+allSameOrDifferent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+allSameOrDifferent.swift"; sourceTree = "<group>"; };
 		2ACD1412248B89D9001DC143 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		2ACD1416248CEA0A001DC143 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				2A673D6A248AE984000D293B /* AppDelegate.swift */,
 				2A673D6C248AE984000D293B /* SceneDelegate.swift */,
+				2ACD1416248CEA0A001DC143 /* Colors.swift */,
 				2A673D7E248AE9F4000D293B /* View */,
 				2A673D81248AEA10000D293B /* View Model */,
 				2A673D84248AEA2B000D293B /* Model */,
@@ -255,6 +258,7 @@
 				2A673D93248AEAD3000D293B /* Array+Identifiable.swift in Sources */,
 				2ACD1413248B89D9001DC143 /* Card.swift in Sources */,
 				2A673D80248AEA0C000D293B /* Dealer.swift in Sources */,
+				2ACD1417248CEA0A001DC143 /* Colors.swift in Sources */,
 				2A673D83248AEA27000D293B /* Game.swift in Sources */,
 				2A673D6B248AE984000D293B /* AppDelegate.swift in Sources */,
 				2ACD1411248B89BC001DC143 /* Array+allSameOrDifferent.swift in Sources */,
@@ -405,6 +409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.ClassicSetGame;
 				PRODUCT_NAME = "Classic Set";
 				SWIFT_VERSION = 5.0;
@@ -425,6 +430,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.ClassicSetGame;
 				PRODUCT_NAME = "Classic Set";
 				SWIFT_VERSION = 5.0;
