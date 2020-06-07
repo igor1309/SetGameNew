@@ -11,6 +11,12 @@ import SwiftUI
 final class Dealer: ObservableObject {
     @Published private(set) var game: Game = Game()
     
+    @Published var showHint: Bool = false {
+        didSet {
+            game.hint(turnOn: showHint)
+        }
+    }
+    
     //  MARK: - Model access
     
     func cards() -> [Card] {
@@ -37,9 +43,6 @@ final class Dealer: ObservableObject {
     
     func resetGame() {
         game.resetGame()
-    }
-    
-    func hint() {
-        game.hint()
+        showHint = false
     }
 }

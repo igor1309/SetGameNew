@@ -9,6 +9,23 @@
 import SwiftUI
 import CoreHaptics
 
+struct ButtonView: View {
+    var systemName: String
+    var action: () -> Void
+    
+    init(_ systemName: String, action: @escaping () -> Void) {
+        self.systemName = systemName
+        self.action = action
+    }
+    
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .padding()
+        }
+    }
+}
+
 struct ContentView: View {
     @ObservedObject var dealer = Dealer()
     
@@ -19,31 +36,33 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                HStack {
-                    Button("New game") {
+            VStack {
+                HStack(spacing: 0) {
+                    ButtonView("rectangle.on.rectangle.angled") {
                         self.resetGame()
+                    }
+                    
+                    ButtonView("questionmark.circle") {
+                        self.showSheet = true
                     }
                     
                     Spacer()
                     
-                    Button("?") {
-                        self.showSheet = true
+                    ButtonView("sun.max") {
+                        self.haptic(style: .light)
+                        self.dealer.showHint.toggle()
                     }
-                    .padding(.trailing)
+                    .foregroundColor(dealer.showHint ? .orange : .accentColor)
                     
-                    Button("More") {
+                    ButtonView("3.square") {
                         self.dealer.moreCards()
                     }
                 }
-                .padding(.horizontal)
                 
                 Text("Score: \(dealer.game.score)")
                     .foregroundColor(Color.orange)
+                    .opacity(dealer.showHint ? 0.2 : 1)
                     .font(.headline)
-                    .onTapGesture {
-                        self.dealer.hint()
-                }
             }
             
             Grid(dealer.cards()) { card in
@@ -72,7 +91,6 @@ struct ContentView: View {
                 title: Text(dealer.game.match ?? false ? "Yay!" : "Oops…"),
                 message: Text(dealer.game.result),
                 dismissButton: .cancel(Text("OK")) {
-                    //                    self.showAlert = false
                     self.dealer.continueGame()
                 }
             )
@@ -114,11 +132,14 @@ struct ContentView: View {
             
             let strokeColor: Color =
                 card.isMatch == nil
-                    ? card.isSelected ? Color.orange : .clear
-                    : card.isMatch! ? Color.green : .red
+                    ? card.isHinted
+                        ? Color(UIColor.systemTeal)
+                        : (card.isSelected ? Color.orange : .clear)
+                    : (card.isMatch! ? Color.green : .red)
             
             let lineWidth: CGFloat = card.isMatch == nil
-                ? card.isSelected ? 3 : 0
+                ? card.isHinted
+                    ? 3: card.isSelected ? 3 : 0
                 : card.isMatch! ? 8 : 6
             
             return color
@@ -126,15 +147,6 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: cornerRadius)
                         .stroke(strokeColor, lineWidth: lineWidth)
             )
-                .border(card.isHinted
-                    ? Color(UIColor.systemTeal)//.opacity(0.75)
-                    : .clear)
-                .padding(card.isHinted ? 3 : 0)
-//                .shadow(
-//                    color: card.isHinted
-//                        ? Color(UIColor.systemTeal).opacity(0.75)
-//                        : .clear, radius: 3, x: 0, y: 0
-//            )
         }
         
         let transition = AnyTransition
@@ -156,6 +168,7 @@ struct ContentView: View {
                 self.haptic(style: .light)
                 withAnimation(.easeInOut) {
                     self.dealer.selectCard(card)
+                    self.dealer.showHint = false
                 }
         }
         .padding(6)

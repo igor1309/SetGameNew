@@ -55,28 +55,35 @@ struct Game {
     
     //  MARK: - Hint
     
-    mutating func hint() {
+    mutating func hint(turnOn: Bool) {
      
-        func markHinted(cards: Card...) {
+        func markHint(isOn: Bool, cards: Card...) {
             for card in cards {
                 guard let index = deck.firstIndex(of: card) else { continue }
-                deck[index].isHinted = true
+                deck[index].isHinted = isOn
             }
         }
         
         let table = cards()
         
-        search: for i in 0..<table.count - 1 {
-            for j in i+1..<table.count - 1 {
-                for k in j+1..<table.count - 1 {
-                    let potentialSet = [table[i], table[j], table[k]]
-                    let (match, _) = matchResult(cards: potentialSet)
-                    if let match = match, match {
-                        print("\(match) - \(i):\(j):\(k)")
-                        markHinted(cards: table[i], table[j], table[k])
-                        break search
+        if turnOn {
+            search: for i in 0..<table.count - 1 {
+                for j in i+1..<table.count - 1 {
+                    for k in j+1..<table.count - 1 {
+                        let potentialSet = [table[i], table[j], table[k]]
+                        let (match, _) = matchResult(cards: potentialSet)
+                        if let match = match, match {
+                            print("\(match) - \(i):\(j):\(k)")
+                            markHint(isOn: true,
+                                     cards: table[i], table[j], table[k])
+                            break search
+                        }
                     }
                 }
+            }
+        } else {
+            for card in table {
+                markHint(isOn: false, cards: card)
             }
         }
     }

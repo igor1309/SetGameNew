@@ -13,6 +13,7 @@ struct Card: Identifiable, Hashable {
     
     var isSelected: Bool = false
     var isMatch: Bool?
+    var isHinted: Bool = false
     
     let numberOfShapes: NumberOfShapes
     let shape: CardShape
