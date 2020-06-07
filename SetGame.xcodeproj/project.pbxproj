@@ -26,6 +26,7 @@
 		2ACD1411248B89BC001DC143 /* Array+allSameOrDifferent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1410248B89BC001DC143 /* Array+allSameOrDifferent.swift */; };
 		2ACD1413248B89D9001DC143 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1412248B89D9001DC143 /* Card.swift */; };
 		2ACD1417248CEA0A001DC143 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1416248CEA0A001DC143 /* Colors.swift */; };
+		2ACD141A248D0466001DC143 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1419248D0466001DC143 /* RulesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2ACD1410248B89BC001DC143 /* Array+allSameOrDifferent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+allSameOrDifferent.swift"; sourceTree = "<group>"; };
 		2ACD1412248B89D9001DC143 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2ACD1416248CEA0A001DC143 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2ACD1419248D0466001DC143 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				2A673D6E248AE984000D293B /* ContentView.swift */,
+				2ACD1419248D0466001DC143 /* RulesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				2ACD1411248B89BC001DC143 /* Array+allSameOrDifferent.swift in Sources */,
 				2A673D8F248AEAAA000D293B /* GridLayout.swift in Sources */,
 				2A673D6D248AE984000D293B /* SceneDelegate.swift in Sources */,
+				2ACD141A248D0466001DC143 /* RulesView.swift in Sources */,
 				2A673D6F248AE984000D293B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.ClassicSetGame;
 				PRODUCT_NAME = "Classic Set";
 				SWIFT_VERSION = 5.0;
@@ -438,7 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.ClassicSetGame;
 				PRODUCT_NAME = "Classic Set";
 				SWIFT_VERSION = 5.0;

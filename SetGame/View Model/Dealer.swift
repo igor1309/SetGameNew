@@ -27,11 +27,15 @@ final class Dealer: ObservableObject {
         game.selectCard(card)
     }
     
+    func continueGame() {
+        game.continueGame()
+    }
+    
     func moreCards() {
         game.moreCards()
     }
     
-    func reset() {
-        game.reset()
+    func resetGame() {
+        game.resetGame()
     }
 }

@@ -13,7 +13,7 @@
 import SwiftUI
 
 struct Game {
-    private var deck: [Card]//Set<Card>
+    private(set) var deck: [Card]//Set<Card>
     
     private init(deck: Set<Card>) {
         self.deck = Array(deck)//deck
@@ -21,16 +21,6 @@ struct Game {
     
     init() {
         self.init(deck: Game.createDeck())
-    }
-    
-    private(set) var draw = 0
-    
-    mutating func start() {
-        draw = 12
-    }
-    
-    mutating func moreCards() {
-        draw += 3
     }
     
     static func createDeck() -> Set<Card> {
@@ -49,6 +39,8 @@ struct Game {
         return Set(cards)
     }
     
+    private(set) var draw = 0
+    
     private(set) var match: Bool?
     private(set) var result: String = ""
     private(set) var score: Int = 0
@@ -63,40 +55,53 @@ struct Game {
     
     //  MARK: - Intent(s)
     
-    mutating func selectCard(_ card: Card) {
-        
-        markSelected(card)
+    mutating func start() {
+        draw = 12
+    }
+    
+    mutating func moreCards() {
+        draw += 3
+    }
 
-        guard selectedCards.count == 3 else { return }
-
-        //  three cards selected
-        print("3 cards")
-        (match, result) = matchResult()
-        print(match)
-        print(result)
-        
+    mutating func continueGame() {
         if match != nil {
             if match! {
-                for card in selectedCards { markCard(card, match: match!) }
                 deleteSelectedCards()
                 draw = 12
-                score += 1
             } else {
-                print("no match, select last")
-                deselectCards()
-                markSelected(card)
+                resetSelectedCards()
             }
             (match, result) = (nil, "")
         }
     }
     
-    mutating func deselectCards() {
+    mutating func selectCard(_ card: Card) {
+        
+        if match == nil {
+            toggleSelection(of: card)
+        } else {
+            continueGame()
+        }
+        
+        guard selectedCards.count == 3 else { return }
+        
+        //  three cards selected
+        (match, result) = matchResult()
+        if match! {
+            score += 1
+        }
+        for card in selectedCards { markCard(card, match: match!) }
+    }
+    
+    mutating func resetSelectedCards() {
         for card in selectedCards {
-            markSelected(card)
+            guard let index = deck.firstIndex(of: card) else { continue }
+            deck[index].isSelected = false
+            deck[index].isMatch = nil
         }
     }
     
-    mutating func markSelected(_ card: Card) {
+    mutating func toggleSelection(of card: Card) {
         guard let index = deck.firstIndex(of: card) else { return }
         deck[index].isSelected.toggle()
     }
@@ -107,7 +112,7 @@ struct Game {
         }
     }
     
-    mutating func markCard(_ card: Card, match: Bool) {
+    mutating func markCard(_ card: Card, match: Bool?) {
         guard let index = deck.firstIndex(of: card) else { return }
         
         deck[index].isMatch = match
@@ -141,11 +146,10 @@ struct Game {
         return (match, result.isEmpty ? "It's a match!!" : result)
     }
     
-    mutating func reset() {
+    mutating func resetGame() {
         deck = Array(Game.createDeck())
         draw = 12
-        match = nil
-        result = ""
+        (match, result) = (nil, "")
         score = 0
     }
 }

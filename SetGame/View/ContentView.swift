@@ -7,11 +7,44 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct ContentView: View {
     @ObservedObject var dealer = Dealer()
     
+    @State private var engine: CHHapticEngine?
+    
     @State private var showAlert = false
+    @State private var showSheet = false
+    
+//    private func haptic(
+//        feedback: UINotificationFeedbackGenerator.FeedbackType?,
+//        style: UIImpactFeedbackGenerator.FeedbackStyle?
+//    ) {
+//        if let feedback = feedback {
+//            let generator = UINotificationFeedbackGenerator()
+//            generator.notificationOccurred(feedback)
+//        }
+//
+//        if let style = style {
+//            let generator2 = UIImpactFeedbackGenerator(style: style)
+//            generator2.impactOccurred()
+//        }
+//    }
+    
+    private func haptic(
+        feedback: UINotificationFeedbackGenerator.FeedbackType
+    ) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(feedback)
+    }
+    
+    private func haptic(
+        style: UIImpactFeedbackGenerator.FeedbackStyle
+    ) {
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.impactOccurred()
+    }
     
     var body: some View {
         VStack {
@@ -22,6 +55,11 @@ struct ContentView: View {
                     }
                     
                     Spacer()
+                    
+                    Button("?") {
+                        self.showSheet = true
+                    }
+                    .padding(.trailing)
                     
                     Button("More") {
                         self.dealer.moreCards()
@@ -43,27 +81,35 @@ struct ContentView: View {
             }
         }
         .background(Color.background.edgesIgnoringSafeArea(.all))
+        .onAppear {
+            self.prepareHaptics()
+        }
         .onReceive(
             dealer.$game
                 .map { $0.match }
-                .filter { $0 != nil }
         ) {
-            print("onReceive: \($0)")
             self.showAlert = $0 != nil
+            if $0 != nil {
+                self.haptic(feedback: $0! ? .success : .error)
+            }
         }
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text(dealer.game.match ?? false ? "Yay!" : "Oops…"),
                 message: Text(dealer.game.result),
                 dismissButton: .cancel(Text("OK")) {
-                    //  self.resetGame()
+                    //                    self.showAlert = false
+                    self.dealer.continueGame()
                 }
             )
+        }
+        .sheet(isPresented: $showSheet) {
+            RulesView()
         }
     }
     
     private func resetGame() {
-        self.dealer.reset()
+        self.dealer.resetGame()
     }
     
     private func cardView(_ card: Card) -> some View {
@@ -124,6 +170,7 @@ struct ContentView: View {
             animation: .easeInOut(duration: 0.6)
         )
             .onTapGesture {
+                self.haptic(style: .light)
                 withAnimation(.easeInOut) {
                     self.dealer.selectCard(card)
                 }
@@ -131,7 +178,20 @@ struct ContentView: View {
         .padding(6)
     }
     
-    let cornerRadius: CGFloat = 10
+    private let cornerRadius: CGFloat = 10
+    
+    //  MARK: - Haptics
+    
+    private func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        
+        do {
+            self.engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
