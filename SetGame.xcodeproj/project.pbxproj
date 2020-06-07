@@ -84,7 +84,7 @@
 			children = (
 				2A673D6A248AE984000D293B /* AppDelegate.swift */,
 				2A673D6C248AE984000D293B /* SceneDelegate.swift */,
-				2ACD1416248CEA0A001DC143 /* Colors.swift */,
+				2ACD1418248CEDE5001DC143 /* Colors */,
 				2A673D7E248AE9F4000D293B /* View */,
 				2A673D81248AEA10000D293B /* View Model */,
 				2A673D84248AEA2B000D293B /* Model */,
@@ -176,6 +176,14 @@
 				2ACD1410248B89BC001DC143 /* Array+allSameOrDifferent.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2ACD1418248CEDE5001DC143 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				2ACD1416248CEA0A001DC143 /* Colors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
