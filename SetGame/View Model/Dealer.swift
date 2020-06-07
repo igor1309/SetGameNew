@@ -39,6 +39,7 @@ final class Dealer: ObservableObject {
     
     func moreCards() {
         game.moreCards()
+        showHint = false
     }
     
     func resetGame() {

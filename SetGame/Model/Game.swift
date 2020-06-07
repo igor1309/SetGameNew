@@ -15,6 +15,11 @@ import SwiftUI
 struct Game {
     private(set) var deck: [Card]//Set<Card>
     
+    private(set) var draw = 0
+    private(set) var match: Bool?
+    private(set) var result: String = ""
+    private(set) var score: Int = 0
+    
     private init(deck: Set<Card>) {
         self.deck = Array(deck)//deck
     }
@@ -39,12 +44,6 @@ struct Game {
         return Set(cards)
     }
     
-    private(set) var draw = 0
-    
-    private(set) var match: Bool?
-    private(set) var result: String = ""
-    private(set) var score: Int = 0
-    
     private var selectedCards: [Card] { deck.filter { $0.isSelected } }
     
     //  MARK: - Model access
@@ -56,7 +55,7 @@ struct Game {
     //  MARK: - Hint
     
     mutating func hint(turnOn: Bool) {
-     
+        
         func markHint(isOn: Bool, cards: Card...) {
             for card in cards {
                 guard let index = deck.firstIndex(of: card) else { continue }
@@ -97,8 +96,23 @@ struct Game {
     mutating func moreCards() {
         draw += 3
     }
-
+    
     mutating func continueGame() {
+        
+        func resetSelectedCards() {
+            for card in selectedCards {
+                guard let index = deck.firstIndex(of: card) else { continue }
+                deck[index].isSelected = false
+                deck[index].isMatch = nil
+            }
+        }
+        
+        func deleteSelectedCards() {
+            for card in selectedCards {
+                deck.removeAll(where: { $0.id == card.id })
+            }
+        }
+        
         if match != nil {
             if match! {
                 deleteSelectedCards()
@@ -111,6 +125,16 @@ struct Game {
     }
     
     mutating func selectCard(_ card: Card) {
+
+        func toggleSelection(of card: Card) {
+            guard let index = deck.firstIndex(of: card) else { return }
+            deck[index].isSelected.toggle()
+        }
+        
+        func markCard(_ card: Card, match: Bool?) {
+            guard let index = deck.firstIndex(of: card) else { return }
+            deck[index].isMatch = match
+        }
         
         if match == nil {
             toggleSelection(of: card)
@@ -128,32 +152,7 @@ struct Game {
         for card in selectedCards { markCard(card, match: match!) }
     }
     
-    mutating func resetSelectedCards() {
-        for card in selectedCards {
-            guard let index = deck.firstIndex(of: card) else { continue }
-            deck[index].isSelected = false
-            deck[index].isMatch = nil
-        }
-    }
-    
-    mutating func toggleSelection(of card: Card) {
-        guard let index = deck.firstIndex(of: card) else { return }
-        deck[index].isSelected.toggle()
-    }
-    
-    mutating func deleteSelectedCards() {
-        for card in selectedCards {
-            deck.removeAll(where: { $0.id == card.id })
-        }
-    }
-    
-    mutating func markCard(_ card: Card, match: Bool?) {
-        guard let index = deck.firstIndex(of: card) else { return }
-        
-        deck[index].isMatch = match
-    }
-    
-    func matchResult(cards: [Card]) -> (Bool?, String) {
+    private func matchResult(cards: [Card]) -> (Bool?, String) {
         guard cards.count == 3 else { return (nil, "") }
         
         //  Сет состоит из трёх карт, которые удовлетворяют всем условиям:
