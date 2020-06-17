@@ -44,47 +44,14 @@ struct Game {
         return Set(cards)
     }
     
-    private var selectedCards: [Card] { deck.filter { $0.isSelected } }
+    private var selectedCards: [Card] {
+        deck.filter { $0.isSelected }
+    }
     
     //  MARK: - Model access
     
     func cards() -> [Card] {//SSet<Card> {
         Array(deck.prefix(draw))
-    }
-    
-    //  MARK: - Hint
-    
-    mutating func hint(turnOn: Bool) {
-        
-        func markHint(isOn: Bool, cards: Card...) {
-            for card in cards {
-                guard let index = deck.firstIndex(of: card) else { continue }
-                deck[index].isHinted = isOn
-            }
-        }
-        
-        let table = cards()
-        
-        if turnOn {
-            search: for i in 0..<table.count - 1 {
-                for j in i+1..<table.count - 1 {
-                    for k in j+1..<table.count - 1 {
-                        let potentialSet = [table[i], table[j], table[k]]
-                        let (match, _) = matchResult(cards: potentialSet)
-                        if let match = match, match {
-                            print("\(match) - \(i):\(j):\(k)")
-                            markHint(isOn: true,
-                                     cards: table[i], table[j], table[k])
-                            break search
-                        }
-                    }
-                }
-            }
-        } else {
-            for card in table {
-                markHint(isOn: false, cards: card)
-            }
-        }
     }
     
     //  MARK: - Intent(s)
@@ -95,6 +62,13 @@ struct Game {
     
     mutating func moreCards() {
         draw += 3
+    }
+    
+    mutating func resetGame() {
+        deck = Array(Game.createDeck())
+        draw = 12
+        (match, result) = (nil, "")
+        score = 0
     }
     
     mutating func continueGame() {
@@ -125,7 +99,7 @@ struct Game {
     }
     
     mutating func selectCard(_ card: Card) {
-
+        
         func toggleSelection(of card: Card) {
             guard let index = deck.firstIndex(of: card) else { return }
             deck[index].isSelected.toggle()
@@ -151,6 +125,8 @@ struct Game {
         }
         for card in selectedCards { markCard(card, match: match!) }
     }
+    
+    //  MARK: Match
     
     private func matchResult(cards: [Card]) -> (Bool?, String) {
         guard cards.count == 3 else { return (nil, "") }
@@ -180,10 +156,38 @@ struct Game {
         return (match, result.isEmpty ? "It's a match!!" : result)
     }
     
-    mutating func resetGame() {
-        deck = Array(Game.createDeck())
-        draw = 12
-        (match, result) = (nil, "")
-        score = 0
+    //  MARK: - Hint
+    
+    mutating func hint(turnOn: Bool) {
+        
+        func markHint(isOn: Bool, cards: Card...) {
+            for card in cards {
+                guard let index = deck.firstIndex(of: card) else { continue }
+                deck[index].isHinted = isOn
+            }
+        }
+        
+        let table = cards()
+        
+        if turnOn {
+            search: for i in 0..<table.count - 1 {
+                for j in i+1..<table.count - 1 {
+                    for k in j+1..<table.count - 1 {
+                        let potentialSet = [table[i], table[j], table[k]]
+                        let (match, _) = matchResult(cards: potentialSet)
+                        if let match = match, match {
+                            //print("\(match) - \(i):\(j):\(k)")
+                            markHint(isOn: true,
+                                     cards: table[i], table[j], table[k])
+                            break search
+                        }
+                    }
+                }
+            }
+        } else {
+            for card in table.filter({ $0.isHinted }) {
+                markHint(isOn: false, cards: card)
+            }
+        }
     }
 }

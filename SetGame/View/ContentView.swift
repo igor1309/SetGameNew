@@ -153,12 +153,19 @@ struct ContentView: View {
             .move(edge: Edge.allCases.randomElement() ?? .top)
         //            .animation(.easeIn(duration: 5))
         
-        return VStack {
-            ForEach(0..<numberOfShapes) { _ in
-                cardElement()
+        return ZStack {
+            CardFrame(radiusApprox: 6/100, indentationApprox: 4/10)
+                .stroke(Color.gray.opacity(0.75), lineWidth: 0.5)
+            
+            VStack {
+                ForEach(0..<numberOfShapes) { _ in
+                    cardElement()
+                }
             }
+            .padding()
         }
         .cardify(
+            padding: 3,
             cornerRadius: cornerRadius,
             background: background(),
             transition: transition,

@@ -23,6 +23,7 @@
 		2A673D91248AEABD000D293B /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A673D90248AEABD000D293B /* Grid.swift */; };
 		2A673D93248AEAD3000D293B /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A673D92248AEAD3000D293B /* Array+Identifiable.swift */; };
 		2A673D95248AEAE3000D293B /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A673D94248AEAE3000D293B /* CardViewModifier.swift */; };
+		2ABB9185249AA68700882DCB /* CardFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB9184249AA68700882DCB /* CardFrame.swift */; };
 		2ACD1411248B89BC001DC143 /* Array+allSameOrDifferent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1410248B89BC001DC143 /* Array+allSameOrDifferent.swift */; };
 		2ACD1413248B89D9001DC143 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1412248B89D9001DC143 /* Card.swift */; };
 		2ACD1417248CEA0A001DC143 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1416248CEA0A001DC143 /* Colors.swift */; };
@@ -48,6 +49,7 @@
 		2A673D90248AEABD000D293B /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		2A673D92248AEAD3000D293B /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		2A673D94248AEAE3000D293B /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
+		2ABB9184249AA68700882DCB /* CardFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrame.swift; sourceTree = "<group>"; };
 		2ACD1410248B89BC001DC143 /* Array+allSameOrDifferent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+allSameOrDifferent.swift"; sourceTree = "<group>"; };
 		2ACD1412248B89D9001DC143 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2ACD1416248CEA0A001DC143 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2A673D6E248AE984000D293B /* ContentView.swift */,
+				2ABB9184249AA68700882DCB /* CardFrame.swift */,
 				2ACD1419248D0466001DC143 /* RulesView.swift */,
 			);
 			path = View;
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A673D8C248AEA8E000D293B /* Preview Tweaks.swift in Sources */,
+				2ABB9185249AA68700882DCB /* CardFrame.swift in Sources */,
 				2A673D86248AEA55000D293B /* Diamond.swift in Sources */,
 				2A673D88248AEA6D000D293B /* Squiggle.swift in Sources */,
 				2A673D95248AEAE3000D293B /* CardViewModifier.swift in Sources */,
