@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Card: Identifiable, Hashable {
-    var id = UUID()
+    let id = UUID()
     
     var isSelected: Bool = false
     var isMatch: Bool?

@@ -36,7 +36,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            VStack {
+            ZStack {
                 HStack(spacing: 0) {
                     ButtonView("rectangle.on.rectangle.angled") {
                         self.resetGame()
@@ -54,9 +54,10 @@ struct ContentView: View {
                     }
                     .foregroundColor(dealer.showHint ? .orange : .accentColor)
                     
-                    ButtonView("3.square") {
+                    ButtonView("plus.square.on.square") {
                         self.dealer.moreCards()
                     }
+                    .disabled(!dealer.moreCardsAvailiable)
                 }
                 
                 Text("Score: \(dealer.game.score)")
@@ -69,9 +70,7 @@ struct ContentView: View {
                 self.cardView(card)
             }
             .padding(.horizontal, 6)
-            .onAppear {
-                self.dealer.start()
-            }
+            .onAppear { self.dealer.start() }
         }
         .background(Color.background.edgesIgnoringSafeArea(.all))
         .onAppear {
@@ -134,12 +133,12 @@ struct ContentView: View {
                 card.isMatch == nil
                     ? card.isHinted
                         ? Color(UIColor.systemTeal)
-                        : (card.isSelected ? Color.orange : .clear)
+                        : (card.isSelected ? Color.orange : Color.gray.opacity(0.2))
                     : (card.isMatch! ? Color.green : .red)
             
             let lineWidth: CGFloat = card.isMatch == nil
                 ? card.isHinted
-                    ? 3: card.isSelected ? 3 : 0
+                    ? 3 : card.isSelected ? 3 : 2
                 : card.isMatch! ? 8 : 6
             
             return color
@@ -155,7 +154,7 @@ struct ContentView: View {
         
         return ZStack {
             CardFrame(radiusApprox: 6/100, indentationApprox: 4/10)
-                .stroke(Color.gray.opacity(0.75), lineWidth: 0.5)
+                .stroke(Color.gray.opacity(0.5), lineWidth: 0.5)
             
             VStack {
                 ForEach(0..<numberOfShapes) { _ in
@@ -169,7 +168,7 @@ struct ContentView: View {
             cornerRadius: cornerRadius,
             background: background(),
             transition: transition,
-            animation: .easeInOut(duration: 0.6)
+            animation: .easeInOut(duration: 0.4)
         )
             .onTapGesture {
                 self.haptic(style: .light)

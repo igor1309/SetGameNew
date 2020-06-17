@@ -23,6 +23,8 @@ final class Dealer: ObservableObject {
         game.cards()
     }
     
+    var moreCardsAvailiable: Bool { game.moreCardsAvailiable }
+    
     //  MARK: - Intent(s)
     
     func start() {

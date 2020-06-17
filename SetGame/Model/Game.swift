@@ -54,6 +54,8 @@ struct Game {
         Array(deck.prefix(draw))
     }
     
+    var moreCardsAvailiable: Bool { draw < 24 }
+    
     //  MARK: - Intent(s)
     
     mutating func start() {
@@ -61,7 +63,9 @@ struct Game {
     }
     
     mutating func moreCards() {
-        draw += 3
+        if moreCardsAvailiable {
+            draw += 3
+        }
     }
     
     mutating func resetGame() {
