@@ -28,6 +28,10 @@
 		2ACD1413248B89D9001DC143 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1412248B89D9001DC143 /* Card.swift */; };
 		2ACD1417248CEA0A001DC143 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1416248CEA0A001DC143 /* Colors.swift */; };
 		2ACD141A248D0466001DC143 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1419248D0466001DC143 /* RulesView.swift */; };
+		2AD75A0B2934C44C002E22C6 /* AppStorePreviewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A0A2934C44C002E22C6 /* AppStorePreviewsApp.swift */; };
+		2AD75A0D2934C44C002E22C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A0C2934C44C002E22C6 /* ContentView.swift */; };
+		2AD75A0F2934C44E002E22C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A0E2934C44E002E22C6 /* Assets.xcassets */; };
+		2AD75A122934C44E002E22C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,10 +59,22 @@
 		2ACD1416248CEA0A001DC143 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2ACD1419248D0466001DC143 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		2AD75A032934C026002E22C6 /* SetGameNew */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SetGameNew; path = ..; sourceTree = "<group>"; };
+		2AD75A082934C44C002E22C6 /* AppStorePreviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStorePreviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD75A0A2934C44C002E22C6 /* AppStorePreviewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorePreviewsApp.swift; sourceTree = "<group>"; };
+		2AD75A0C2934C44C002E22C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2AD75A0E2934C44E002E22C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2A673D64248AE984000D293B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AD75A052934C44C002E22C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,6 +89,7 @@
 			children = (
 				2AD75A032934C026002E22C6 /* SetGameNew */,
 				2A673D69248AE984000D293B /* SetGame */,
+				2AD75A092934C44C002E22C6 /* AppStorePreviews */,
 				2A673D68248AE984000D293B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2A673D67248AE984000D293B /* Classic Set.app */,
+				2AD75A082934C44C002E22C6 /* AppStorePreviews.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +212,25 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		2AD75A092934C44C002E22C6 /* AppStorePreviews */ = {
+			isa = PBXGroup;
+			children = (
+				2AD75A0A2934C44C002E22C6 /* AppStorePreviewsApp.swift */,
+				2AD75A0C2934C44C002E22C6 /* ContentView.swift */,
+				2AD75A0E2934C44E002E22C6 /* Assets.xcassets */,
+				2AD75A102934C44E002E22C6 /* Preview Content */,
+			);
+			path = AppStorePreviews;
+			sourceTree = "<group>";
+		};
+		2AD75A102934C44E002E22C6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,18 +251,38 @@
 			productReference = 2A673D67248AE984000D293B /* Classic Set.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2AD75A072934C44C002E22C6 /* AppStorePreviews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AD75A132934C44E002E22C6 /* Build configuration list for PBXNativeTarget "AppStorePreviews" */;
+			buildPhases = (
+				2AD75A042934C44C002E22C6 /* Sources */,
+				2AD75A052934C44C002E22C6 /* Frameworks */,
+				2AD75A062934C44C002E22C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppStorePreviews;
+			productName = AppStorePreviews;
+			productReference = 2AD75A082934C44C002E22C6 /* AppStorePreviews.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2A673D5F248AE984000D293B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Igor Malyarov";
 				TargetAttributes = {
 					2A673D66248AE984000D293B = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					2AD75A072934C44C002E22C6 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -243,6 +300,7 @@
 			projectRoot = "";
 			targets = (
 				2A673D66248AE984000D293B /* SetGame */,
+				2AD75A072934C44C002E22C6 /* AppStorePreviews */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +313,15 @@
 				2A673D77248AE984000D293B /* LaunchScreen.storyboard in Resources */,
 				2A673D74248AE984000D293B /* Preview Assets.xcassets in Resources */,
 				2A673D71248AE984000D293B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AD75A062934C44C002E22C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD75A122934C44E002E22C6 /* Preview Assets.xcassets in Resources */,
+				2AD75A0F2934C44E002E22C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +350,15 @@
 				2A673D6D248AE984000D293B /* SceneDelegate.swift in Sources */,
 				2ACD141A248D0466001DC143 /* RulesView.swift in Sources */,
 				2A673D6F248AE984000D293B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AD75A042934C44C002E22C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD75A0D2934C44C002E22C6 /* ContentView.swift in Sources */,
+				2AD75A0B2934C44C002E22C6 /* AppStorePreviewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +544,70 @@
 			};
 			name = Release;
 		};
+		2AD75A142934C44E002E22C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AppStorePreviews/Preview Content\"";
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.AppStorePreviews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2AD75A152934C44E002E22C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AppStorePreviews/Preview Content\"";
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.AppStorePreviews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -485,6 +625,15 @@
 			buildConfigurations = (
 				2A673D7C248AE984000D293B /* Debug */,
 				2A673D7D248AE984000D293B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AD75A132934C44E002E22C6 /* Build configuration list for PBXNativeTarget "AppStorePreviews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AD75A142934C44E002E22C6 /* Debug */,
+				2AD75A152934C44E002E22C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
