@@ -14,18 +14,32 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2AD75A072934C44C002E22C6"
-               BuildableName = "AppStorePreviews.app"
-               BlueprintName = "AppStorePreviews"
-               ReferencedContainer = "container:SetGame.xcodeproj">
+               BlueprintIdentifier = "2A673D66248AE984000D293B"
+               BuildableName = "Classic Set.app"
+               BlueprintName = "ClassicClassicSetGame"
+               ReferencedContainer = "container:ClassicSetGame.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SetGameNew"
+               BuildableName = "SetGameNew"
+               BlueprintName = "SetGameNew"
+               ReferencedContainer = "container:..">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
@@ -34,10 +48,21 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SetGameNewTests"
+               BuildableName = "SetGameNewTests"
+               BlueprintName = "SetGameNewTests"
+               ReferencedContainer = "container:..">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "2AD75A1C2934C589002E22C6"
                BuildableName = "AppStorePreviewsTests.xctest"
                BlueprintName = "AppStorePreviewsTests"
-               ReferencedContainer = "container:SetGame.xcodeproj">
+               ReferencedContainer = "container:ClassicSetGame.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,10 +81,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2AD75A072934C44C002E22C6"
-            BuildableName = "AppStorePreviews.app"
-            BlueprintName = "AppStorePreviews"
-            ReferencedContainer = "container:SetGame.xcodeproj">
+            BlueprintIdentifier = "2A673D66248AE984000D293B"
+            BuildableName = "Classic Set.app"
+            BlueprintName = "ClassicClassicSetGame"
+            ReferencedContainer = "container:ClassicSetGame.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,10 +98,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2AD75A072934C44C002E22C6"
-            BuildableName = "AppStorePreviews.app"
-            BlueprintName = "AppStorePreviews"
-            ReferencedContainer = "container:SetGame.xcodeproj">
+            BlueprintIdentifier = "2A673D66248AE984000D293B"
+            BuildableName = "Classic Set.app"
+            BlueprintName = "ClassicClassicSetGame"
+            ReferencedContainer = "container:ClassicSetGame.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

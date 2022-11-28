@@ -302,9 +302,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A673D66248AE984000D293B /* ClassicSetGame */ = {
+		2A673D66248AE984000D293B /* ClassicClassicSetGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "ClassicSetGame" */;
+			buildConfigurationList = 2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "ClassicClassicSetGame" */;
 			buildPhases = (
 				2A673D63248AE984000D293B /* Sources */,
 				2A673D64248AE984000D293B /* Frameworks */,
@@ -314,7 +314,7 @@
 			);
 			dependencies = (
 			);
-			name = ClassicSetGame;
+			name = ClassicClassicSetGame;
 			productName = SetGame;
 			productReference = 2A673D67248AE984000D293B /* Classic Set.app */;
 			productType = "com.apple.product-type.application";
@@ -384,7 +384,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A673D62248AE984000D293B /* Build configuration list for PBXProject "SetGame" */;
+			buildConfigurationList = 2A673D62248AE984000D293B /* Build configuration list for PBXProject "ClassicSetGame" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -401,7 +401,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A673D66248AE984000D293B /* ClassicSetGame */,
+				2A673D66248AE984000D293B /* ClassicClassicSetGame */,
 				2AD75A072934C44C002E22C6 /* AppStorePreviews */,
 				2AD75A1C2934C589002E22C6 /* AppStorePreviewsTests */,
 			);
@@ -490,7 +490,7 @@
 /* Begin PBXTargetDependency section */
 		2AD75A222934C589002E22C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A673D66248AE984000D293B /* ClassicSetGame */;
+			target = 2A673D66248AE984000D293B /* ClassicClassicSetGame */;
 			targetProxy = 2AD75A212934C589002E22C6 /* PBXContainerItemProxy */;
 		};
 		2AD75A2E2934CAA3002E22C6 /* PBXTargetDependency */ = {
@@ -644,7 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"SetGame/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VRVJ9YNRQU;
@@ -673,7 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"SetGame/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VRVJ9YNRQU;
@@ -704,7 +704,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"AppStorePreviews/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -736,7 +736,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"AppStorePreviews/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -767,7 +767,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -788,7 +788,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -805,7 +805,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A673D62248AE984000D293B /* Build configuration list for PBXProject "SetGame" */ = {
+		2A673D62248AE984000D293B /* Build configuration list for PBXProject "ClassicSetGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A673D79248AE984000D293B /* Debug */,
@@ -814,7 +814,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "ClassicSetGame" */ = {
+		2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "ClassicClassicSetGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A673D7C248AE984000D293B /* Debug */,
