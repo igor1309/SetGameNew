@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A673D66248AE984000D293B"
                BuildableName = "Classic Set.app"
-               BlueprintName = "SetGame"
+               BlueprintName = "ClassicSetGame"
                ReferencedContainer = "container:SetGame.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -83,7 +83,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A673D66248AE984000D293B"
             BuildableName = "Classic Set.app"
-            BlueprintName = "SetGame"
+            BlueprintName = "ClassicSetGame"
             ReferencedContainer = "container:SetGame.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -100,7 +100,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A673D66248AE984000D293B"
             BuildableName = "Classic Set.app"
-            BlueprintName = "SetGame"
+            BlueprintName = "ClassicSetGame"
             ReferencedContainer = "container:SetGame.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

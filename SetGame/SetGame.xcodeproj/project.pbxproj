@@ -302,9 +302,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A673D66248AE984000D293B /* SetGame */ = {
+		2A673D66248AE984000D293B /* ClassicSetGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "SetGame" */;
+			buildConfigurationList = 2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "ClassicSetGame" */;
 			buildPhases = (
 				2A673D63248AE984000D293B /* Sources */,
 				2A673D64248AE984000D293B /* Frameworks */,
@@ -314,7 +314,7 @@
 			);
 			dependencies = (
 			);
-			name = SetGame;
+			name = ClassicSetGame;
 			productName = SetGame;
 			productReference = 2A673D67248AE984000D293B /* Classic Set.app */;
 			productType = "com.apple.product-type.application";
@@ -401,7 +401,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A673D66248AE984000D293B /* SetGame */,
+				2A673D66248AE984000D293B /* ClassicSetGame */,
 				2AD75A072934C44C002E22C6 /* AppStorePreviews */,
 				2AD75A1C2934C589002E22C6 /* AppStorePreviewsTests */,
 			);
@@ -490,7 +490,7 @@
 /* Begin PBXTargetDependency section */
 		2AD75A222934C589002E22C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A673D66248AE984000D293B /* SetGame */;
+			target = 2A673D66248AE984000D293B /* ClassicSetGame */;
 			targetProxy = 2AD75A212934C589002E22C6 /* PBXContainerItemProxy */;
 		};
 		2AD75A2E2934CAA3002E22C6 /* PBXTargetDependency */ = {
@@ -814,7 +814,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "SetGame" */ = {
+		2A673D7B248AE984000D293B /* Build configuration list for PBXNativeTarget "ClassicSetGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A673D7C248AE984000D293B /* Debug */,
