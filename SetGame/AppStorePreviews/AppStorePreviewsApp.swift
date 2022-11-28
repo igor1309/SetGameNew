@@ -12,7 +12,7 @@ import SwiftUI
 struct AppStorePreviewsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Marketing1Preview(device: .iPhone13Pro)
         }
     }
 }

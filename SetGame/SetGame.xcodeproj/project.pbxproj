@@ -29,13 +29,17 @@
 		2ACD1417248CEA0A001DC143 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1416248CEA0A001DC143 /* Colors.swift */; };
 		2ACD141A248D0466001DC143 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1419248D0466001DC143 /* RulesView.swift */; };
 		2AD75A0B2934C44C002E22C6 /* AppStorePreviewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A0A2934C44C002E22C6 /* AppStorePreviewsApp.swift */; };
-		2AD75A0D2934C44C002E22C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A0C2934C44C002E22C6 /* ContentView.swift */; };
+		2AD75A0D2934C44C002E22C6 /* Marketing1Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A0C2934C44C002E22C6 /* Marketing1Preview.swift */; };
 		2AD75A0F2934C44E002E22C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A0E2934C44E002E22C6 /* Assets.xcassets */; };
 		2AD75A122934C44E002E22C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */; };
 		2AD75A182934C495002E22C6 /* AppStorePreviewing in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A172934C495002E22C6 /* AppStorePreviewing */; };
 		2AD75A202934C589002E22C6 /* AppStorePreviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A1F2934C589002E22C6 /* AppStorePreviewsTests.swift */; };
-		2AD75A282934C5AF002E22C6 /* AppStorePreviewing in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A272934C5AF002E22C6 /* AppStorePreviewing */; };
 		2AD75A2A2934C5AF002E22C6 /* Screenshotting in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A292934C5AF002E22C6 /* Screenshotting */; };
+		2AD75A2C2934C7E8002E22C6 /* Screenshotting in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A2B2934C7E8002E22C6 /* Screenshotting */; };
+		2AD75A302934CB43002E22C6 /* AppStoreScreenshots in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A2F2934CB43002E22C6 /* AppStoreScreenshots */; };
+		2AD75A322934CBB1002E22C6 /* Marketing1Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A312934CBB1002E22C6 /* Marketing1Screenshot.swift */; };
+		2AD75A342934CC5E002E22C6 /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A332934CC5E002E22C6 /* View+ext.swift */; };
+		2AD75A362934CCC5002E22C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A352934CCC5002E22C6 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2A673D66248AE984000D293B;
 			remoteInfo = SetGame;
+		};
+		2AD75A2D2934CAA3002E22C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A673D5F248AE984000D293B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AD75A072934C44C002E22C6;
+			remoteInfo = AppStorePreviews;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -75,11 +86,15 @@
 		2AD75A032934C026002E22C6 /* SetGameNew */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SetGameNew; path = ..; sourceTree = "<group>"; };
 		2AD75A082934C44C002E22C6 /* AppStorePreviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStorePreviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD75A0A2934C44C002E22C6 /* AppStorePreviewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorePreviewsApp.swift; sourceTree = "<group>"; };
-		2AD75A0C2934C44C002E22C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2AD75A0C2934C44C002E22C6 /* Marketing1Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketing1Preview.swift; sourceTree = "<group>"; };
 		2AD75A0E2934C44E002E22C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2AD75A1D2934C589002E22C6 /* AppStorePreviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStorePreviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD75A1F2934C589002E22C6 /* AppStorePreviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorePreviewsTests.swift; sourceTree = "<group>"; };
+		2AD75A2F2934CB43002E22C6 /* AppStoreScreenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppStoreScreenshots; sourceTree = "<group>"; };
+		2AD75A312934CBB1002E22C6 /* Marketing1Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketing1Screenshot.swift; sourceTree = "<group>"; };
+		2AD75A332934CC5E002E22C6 /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
+		2AD75A352934CCC5002E22C6 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD75A2C2934C7E8002E22C6 /* Screenshotting in Frameworks */,
 				2AD75A182934C495002E22C6 /* AppStorePreviewing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD75A2A2934C5AF002E22C6 /* Screenshotting in Frameworks */,
-				2AD75A282934C5AF002E22C6 /* AppStorePreviewing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +260,10 @@
 			isa = PBXGroup;
 			children = (
 				2AD75A0A2934C44C002E22C6 /* AppStorePreviewsApp.swift */,
-				2AD75A0C2934C44C002E22C6 /* ContentView.swift */,
+				2AD75A352934CCC5002E22C6 /* ContentView.swift */,
+				2AD75A0C2934C44C002E22C6 /* Marketing1Preview.swift */,
+				2AD75A312934CBB1002E22C6 /* Marketing1Screenshot.swift */,
+				2AD75A332934CC5E002E22C6 /* View+ext.swift */,
 				2AD75A0E2934C44E002E22C6 /* Assets.xcassets */,
 				2AD75A102934C44E002E22C6 /* Preview Content */,
 			);
@@ -263,6 +281,7 @@
 		2AD75A1E2934C589002E22C6 /* AppStorePreviewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				2AD75A2F2934CB43002E22C6 /* AppStoreScreenshots */,
 				2AD75A1F2934C589002E22C6 /* AppStorePreviewsTests.swift */,
 			);
 			path = AppStorePreviewsTests;
@@ -310,6 +329,7 @@
 			name = AppStorePreviews;
 			packageProductDependencies = (
 				2AD75A172934C495002E22C6 /* AppStorePreviewing */,
+				2AD75A2B2934C7E8002E22C6 /* Screenshotting */,
 			);
 			productName = AppStorePreviews;
 			productReference = 2AD75A082934C44C002E22C6 /* AppStorePreviews.app */;
@@ -327,10 +347,10 @@
 			);
 			dependencies = (
 				2AD75A222934C589002E22C6 /* PBXTargetDependency */,
+				2AD75A2E2934CAA3002E22C6 /* PBXTargetDependency */,
 			);
 			name = AppStorePreviewsTests;
 			packageProductDependencies = (
-				2AD75A272934C5AF002E22C6 /* AppStorePreviewing */,
 				2AD75A292934C5AF002E22C6 /* Screenshotting */,
 			);
 			productName = AppStorePreviewsTests;
@@ -355,7 +375,7 @@
 					};
 					2AD75A1C2934C589002E22C6 = {
 						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 2A673D66248AE984000D293B;
+						TestTargetID = 2AD75A072934C44C002E22C6;
 					};
 				};
 			};
@@ -406,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD75A302934CB43002E22C6 /* AppStoreScreenshots in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,8 +462,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AD75A0D2934C44C002E22C6 /* ContentView.swift in Sources */,
+				2AD75A342934CC5E002E22C6 /* View+ext.swift in Sources */,
+				2AD75A362934CCC5002E22C6 /* ContentView.swift in Sources */,
+				2AD75A0D2934C44C002E22C6 /* Marketing1Preview.swift in Sources */,
 				2AD75A0B2934C44C002E22C6 /* AppStorePreviewsApp.swift in Sources */,
+				2AD75A322934CBB1002E22C6 /* Marketing1Screenshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +485,11 @@
 			isa = PBXTargetDependency;
 			target = 2A673D66248AE984000D293B /* SetGame */;
 			targetProxy = 2AD75A212934C589002E22C6 /* PBXContainerItemProxy */;
+		};
+		2AD75A2E2934CAA3002E22C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AD75A072934C44C002E22C6 /* AppStorePreviews */;
+			targetProxy = 2AD75A2D2934CAA3002E22C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -725,7 +754,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classic Set.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Classic Set";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppStorePreviews.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppStorePreviews";
 			};
 			name = Debug;
 		};
@@ -746,7 +775,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classic Set.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Classic Set";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppStorePreviews.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppStorePreviews";
 			};
 			name = Release;
 		};
@@ -808,12 +837,12 @@
 			package = 2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */;
 			productName = AppStorePreviewing;
 		};
-		2AD75A272934C5AF002E22C6 /* AppStorePreviewing */ = {
+		2AD75A292934C5AF002E22C6 /* Screenshotting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */;
-			productName = AppStorePreviewing;
+			productName = Screenshotting;
 		};
-		2AD75A292934C5AF002E22C6 /* Screenshotting */ = {
+		2AD75A2B2934C7E8002E22C6 /* Screenshotting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */;
 			productName = Screenshotting;
