@@ -25,12 +25,12 @@ struct Marketing1Preview: View {
     
     private func marketing() -> some View {
         VStack {
-            Text("Classic Set Game")
+            Text("MARKETING1_TITLE")
                 .font(.largeTitle.bold())
                 .fontDesign(.serif)
                 .padding()
             
-            Text("Enjoy you time with puzzles.")
+            Text("MARKETING1_SUBTITLE")
                 .italic()
         }
     }

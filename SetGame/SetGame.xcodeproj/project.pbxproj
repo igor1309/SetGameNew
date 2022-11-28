@@ -40,7 +40,7 @@
 		2AD75A322934CBB1002E22C6 /* Marketing1Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A312934CBB1002E22C6 /* Marketing1Screenshot.swift */; };
 		2AD75A342934CC5E002E22C6 /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A332934CC5E002E22C6 /* View+ext.swift */; };
 		2AD75A362934CCC5002E22C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A352934CCC5002E22C6 /* ContentView.swift */; };
-		2AD75A382934CD8B002E22C6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A372934CD8A002E22C6 /* Localizable.strings */; };
+		2AD75A3A2934CDF5002E22C6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A3C2934CDF5002E22C6 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +96,9 @@
 		2AD75A312934CBB1002E22C6 /* Marketing1Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketing1Screenshot.swift; sourceTree = "<group>"; };
 		2AD75A332934CC5E002E22C6 /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		2AD75A352934CCC5002E22C6 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2AD75A372934CD8A002E22C6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2AD75A392934CDA0002E22C6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2AD75A3B2934CDF5002E22C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2AD75A3D2934CDFA002E22C6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,7 +268,7 @@
 				2AD75A0C2934C44C002E22C6 /* Marketing1Preview.swift */,
 				2AD75A312934CBB1002E22C6 /* Marketing1Screenshot.swift */,
 				2AD75A332934CC5E002E22C6 /* View+ext.swift */,
-				2AD75A372934CD8A002E22C6 /* Localizable.strings */,
+				2AD75A3C2934CDF5002E22C6 /* Localizable.strings */,
 				2AD75A0E2934C44E002E22C6 /* Assets.xcassets */,
 				2AD75A102934C44E002E22C6 /* Preview Content */,
 			);
@@ -423,7 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD75A122934C44E002E22C6 /* Preview Assets.xcassets in Resources */,
-				2AD75A382934CD8B002E22C6 /* Localizable.strings in Resources */,
+				2AD75A3A2934CDF5002E22C6 /* Localizable.strings in Resources */,
 				2AD75A0F2934C44E002E22C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +508,15 @@
 				2AD75A392934CDA0002E22C6 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2AD75A3C2934CDF5002E22C6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AD75A3B2934CDF5002E22C6 /* en */,
+				2AD75A3D2934CDFA002E22C6 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -640,6 +650,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SetGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Classic Set";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -668,6 +679,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SetGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Classic Set";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
