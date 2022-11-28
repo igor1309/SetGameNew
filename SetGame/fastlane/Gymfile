@@ -10,7 +10,7 @@ scheme "CI"
 
 output_directory "./fastlane/build"
 
-output_name "ClassicSetGame"
+output_name "SetGame"
 
 # Excludes bitcode from the build
 # Bitcode is deprecated starting with Xcode 14
