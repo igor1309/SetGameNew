@@ -54,6 +54,17 @@
                ReferencedContainer = "container:..">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2AD75A1C2934C589002E22C6"
+               BuildableName = "AppStorePreviewsTests.xctest"
+               BlueprintName = "AppStorePreviewsTests"
+               ReferencedContainer = "container:SetGame.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

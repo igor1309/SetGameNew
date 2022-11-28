@@ -33,7 +33,20 @@
 		2AD75A0F2934C44E002E22C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A0E2934C44E002E22C6 /* Assets.xcassets */; };
 		2AD75A122934C44E002E22C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */; };
 		2AD75A182934C495002E22C6 /* AppStorePreviewing in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A172934C495002E22C6 /* AppStorePreviewing */; };
+		2AD75A202934C589002E22C6 /* AppStorePreviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A1F2934C589002E22C6 /* AppStorePreviewsTests.swift */; };
+		2AD75A282934C5AF002E22C6 /* AppStorePreviewing in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A272934C5AF002E22C6 /* AppStorePreviewing */; };
+		2AD75A2A2934C5AF002E22C6 /* Screenshotting in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A292934C5AF002E22C6 /* Screenshotting */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AD75A212934C589002E22C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A673D5F248AE984000D293B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A673D66248AE984000D293B;
+			remoteInfo = SetGame;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2A673D67248AE984000D293B /* Classic Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Classic Set.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +78,8 @@
 		2AD75A0C2934C44C002E22C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2AD75A0E2934C44E002E22C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2AD75A1D2934C589002E22C6 /* AppStorePreviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStorePreviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD75A1F2934C589002E22C6 /* AppStorePreviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorePreviewsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +98,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AD75A1A2934C589002E22C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD75A2A2934C5AF002E22C6 /* Screenshotting in Frameworks */,
+				2AD75A282934C5AF002E22C6 /* AppStorePreviewing in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,7 +116,9 @@
 				2AD75A032934C026002E22C6 /* SetGameNew */,
 				2A673D69248AE984000D293B /* SetGame */,
 				2AD75A092934C44C002E22C6 /* AppStorePreviews */,
+				2AD75A1E2934C589002E22C6 /* AppStorePreviewsTests */,
 				2A673D68248AE984000D293B /* Products */,
+				2AD75A262934C5AF002E22C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +127,7 @@
 			children = (
 				2A673D67248AE984000D293B /* Classic Set.app */,
 				2AD75A082934C44C002E22C6 /* AppStorePreviews.app */,
+				2AD75A1D2934C589002E22C6 /* AppStorePreviewsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +260,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2AD75A1E2934C589002E22C6 /* AppStorePreviewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AD75A1F2934C589002E22C6 /* AppStorePreviewsTests.swift */,
+			);
+			path = AppStorePreviewsTests;
+			sourceTree = "<group>";
+		};
+		2AD75A262934C5AF002E22C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,6 +315,28 @@
 			productReference = 2AD75A082934C44C002E22C6 /* AppStorePreviews.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2AD75A1C2934C589002E22C6 /* AppStorePreviewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AD75A232934C589002E22C6 /* Build configuration list for PBXNativeTarget "AppStorePreviewsTests" */;
+			buildPhases = (
+				2AD75A192934C589002E22C6 /* Sources */,
+				2AD75A1A2934C589002E22C6 /* Frameworks */,
+				2AD75A1B2934C589002E22C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AD75A222934C589002E22C6 /* PBXTargetDependency */,
+			);
+			name = AppStorePreviewsTests;
+			packageProductDependencies = (
+				2AD75A272934C5AF002E22C6 /* AppStorePreviewing */,
+				2AD75A292934C5AF002E22C6 /* Screenshotting */,
+			);
+			productName = AppStorePreviewsTests;
+			productReference = 2AD75A1D2934C589002E22C6 /* AppStorePreviewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -288,6 +352,10 @@
 					};
 					2AD75A072934C44C002E22C6 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					2AD75A1C2934C589002E22C6 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 2A673D66248AE984000D293B;
 					};
 				};
 			};
@@ -309,6 +377,7 @@
 			targets = (
 				2A673D66248AE984000D293B /* SetGame */,
 				2AD75A072934C44C002E22C6 /* AppStorePreviews */,
+				2AD75A1C2934C589002E22C6 /* AppStorePreviewsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +399,13 @@
 			files = (
 				2AD75A122934C44E002E22C6 /* Preview Assets.xcassets in Resources */,
 				2AD75A0F2934C44E002E22C6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AD75A1B2934C589002E22C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +446,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AD75A192934C589002E22C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD75A202934C589002E22C6 /* AppStorePreviewsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AD75A222934C589002E22C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A673D66248AE984000D293B /* SetGame */;
+			targetProxy = 2AD75A212934C589002E22C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2A673D75248AE984000D293B /* LaunchScreen.storyboard */ = {
@@ -616,6 +708,48 @@
 			};
 			name = Release;
 		};
+		2AD75A242934C589002E22C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.AppStorePreviewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classic Set.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Classic Set";
+			};
+			name = Debug;
+		};
+		2AD75A252934C589002E22C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.AppStorePreviewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classic Set.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Classic Set";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -646,6 +780,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2AD75A232934C589002E22C6 /* Build configuration list for PBXNativeTarget "AppStorePreviewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AD75A242934C589002E22C6 /* Debug */,
+				2AD75A252934C589002E22C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -664,6 +807,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */;
 			productName = AppStorePreviewing;
+		};
+		2AD75A272934C5AF002E22C6 /* AppStorePreviewing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */;
+			productName = AppStorePreviewing;
+		};
+		2AD75A292934C5AF002E22C6 /* Screenshotting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */;
+			productName = Screenshotting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
