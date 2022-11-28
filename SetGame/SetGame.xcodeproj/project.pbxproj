@@ -54,6 +54,7 @@
 		2ACD1412248B89D9001DC143 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2ACD1416248CEA0A001DC143 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2ACD1419248D0466001DC143 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		2AD75A032934C026002E22C6 /* SetGameNew */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SetGameNew; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 		2A673D5E248AE984000D293B = {
 			isa = PBXGroup;
 			children = (
+				2AD75A032934C026002E22C6 /* SetGameNew */,
 				2A673D69248AE984000D293B /* SetGame */,
 				2A673D68248AE984000D293B /* Products */,
 			);
