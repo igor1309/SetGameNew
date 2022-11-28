@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		2AD75A0D2934C44C002E22C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD75A0C2934C44C002E22C6 /* ContentView.swift */; };
 		2AD75A0F2934C44E002E22C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A0E2934C44E002E22C6 /* Assets.xcassets */; };
 		2AD75A122934C44E002E22C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD75A112934C44E002E22C6 /* Preview Assets.xcassets */; };
+		2AD75A182934C495002E22C6 /* AppStorePreviewing in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD75A172934C495002E22C6 /* AppStorePreviewing */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD75A182934C495002E22C6 /* AppStorePreviewing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +266,9 @@
 			dependencies = (
 			);
 			name = AppStorePreviews;
+			packageProductDependencies = (
+				2AD75A172934C495002E22C6 /* AppStorePreviewing */,
+			);
 			productName = AppStorePreviews;
 			productReference = 2AD75A082934C44C002E22C6 /* AppStorePreviews.app */;
 			productType = "com.apple.product-type.application";
@@ -295,6 +300,9 @@
 				Base,
 			);
 			mainGroup = 2A673D5E248AE984000D293B;
+			packageReferences = (
+				2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */,
+			);
 			productRefGroup = 2A673D68248AE984000D293B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -639,6 +647,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/igor1309/swift-screenshotting.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2AD75A172934C495002E22C6 /* AppStorePreviewing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AD75A162934C495002E22C6 /* XCRemoteSwiftPackageReference "swift-screenshotting" */;
+			productName = AppStorePreviewing;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A673D5F248AE984000D293B /* Project object */;
 }

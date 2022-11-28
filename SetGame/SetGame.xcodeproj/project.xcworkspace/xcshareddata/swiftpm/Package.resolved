@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-screenshotting",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/igor1309/swift-screenshotting.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "511294c630e13d6fdfbeecc9619cf46766b596d4"
+      }
+    }
+  ],
+  "version" : 2
+}
